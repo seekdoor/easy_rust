@@ -1,6 +1,12 @@
 ## Updates
 ![example workflow name](https://github.com/Dhghomon/easy_rust/workflows/github%20pages/badge.svg)
 
+19 January 2023: [Learn Rust in a Month of Lunches](https://www.manning.com/books/learn-rust-in-a-month-of-lunches) is now available for purchase on Manning. Rust in a Month of Lunches is based on the content in the original Easy Rust but updated, improved with reader feedback and expanded (about twice the size).
+
+![](Learn_Rust_in_a_Month_of_Lunches.png)
+
+31 October 2022: [Now available in Spanish](https://www.jmgaguilera.com/rust_facil/)
+
 23 May 2021: [Now available in Indonesian](https://github.com/ariandy/easy-rust-indonesia) thanks to [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/).
 
 2 April 2021: [Added BuyMeACoffee link](https://www.buymeacoffee.com/mithridates) for those who would like to buy me a coffee.
@@ -143,7 +149,7 @@ I am a Canadian who lives in Korea, and I wrote Easy Rust while thinking of how 
   - [Taking_user_input](#taking-user-input)
   - [Using files](#using-files)
   - [Cargo doc](#cargo-doc)
-  - [The end?](#the-end?)
+  - [The end?](#the-end)
 
 # Part 1 - Rust in your browser
 
@@ -222,7 +228,7 @@ Rust has simple types that are called **primitive types** (primitive = very basi
 - Signed integers,
 - Unsigned integers.
 
-Signed means `+` (plus sign) and `-` (minus sign), so signed integers can be positive or negative (e.g. +8, -8). But unsigned integers can only be positive, because they do not have a sign.
+Signed means `+` (plus sign) and `-` (minus sign), so signed integers can be positive (e.g. +8), negative (e.g. -8), or zero. But unsigned integers can only be positive or zero, because they do not have a sign.
 
 The signed integers are: `i8`, `i16`, `i32`, `i64`, `i128`, and `isize`.
 The unsigned integers are: `u8`, `u16`, `u32`, `u64`, `u128`, and `usize`.
@@ -638,7 +644,7 @@ You can use a code block to return a value:
 ```rust
 fn main() {
     let my_number = {
-    let second_number = 8;
+        let second_number = 8;
         second_number + 9 // No semicolon, so the code block returns 8 + 9.
                           // It works just like a function
     };
@@ -652,7 +658,7 @@ If you add a semicolon inside the block, it will return `()` (nothing):
 ```rust
 fn main() {
     let my_number = {
-    let second_number = 8; // declare second_number,
+        let second_number = 8; // declare second_number,
         second_number + 9; // add 9 to second_number
                            // but we didn't return it!
                            // second_number dies now
@@ -4568,7 +4574,7 @@ fn main() {
 
 The message `"Time to panic!"` displays when you run the program: `thread 'main' panicked at 'Time to panic!', src\main.rs:2:3`
 
-You will remember that `src\main.rs` is the directory and file name, and `2:3` is the line and column name. With this information, you can find the code and fix it.
+You will remember that `src\main.rs` is the directory and file name, and `2:3` are the line and column numbers. With this information, you can find the code and fix it.
 
 `panic!` is a good macro to use to make sure that you know when something changes. For example, this function called `prints_three_things` always prints index [0], [1], and [2] from a vector. It is okay because we always give it a vector with three items:
 
@@ -11002,7 +11008,7 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 That's not too hard.
 
-Usually you will want to put your tests in their own module. To do this, use the same `mod` keyword and add `#[cfg(test)]` above it (remember: `cfg` means "configure). You also want to continue to write `#[test]` above each test. This is because later on when you install Rust, you can do more complicated testing. You will be able to run one test, or all of them, or run a few. Also don't forget to write `use super::*;` because the test module needs to use the functions above it. Now it will look like this:
+Usually you will want to put your tests in their own module. To do this, use the same `mod` keyword and add `#[cfg(test)]` above it (remember: `cfg` means "configure"). You also want to continue to write `#[test]` above each test. This is because later on when you install Rust, you can do more complicated testing. You will be able to run one test, or all of them, or run a few. Also don't forget to write `use super::*;` because the test module needs to use the functions above it. Now it will look like this:
 
 ```rust
 fn return_two() -> i8 {
@@ -11821,7 +11827,7 @@ The `Serialize` and `Deserialize` traits are what make the conversion easy. (Tha
 
 ### regex
 
-The [regex](https://crates.io/crates/regex) crate lets you search through text using [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). With that you can get matches for something like `colour`, `color`, `colours` and `colors` through a single search. Regular expressions are a whole other language have to learn that too if you want to use them.
+The [regex](https://crates.io/crates/regex) crate lets you search through text using [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). With that you can get matches for something like `colour`, `color`, `colours` and `colors` through a single search. Regular expressions are a whole other language to learn if you want to use them.
 
 ### chrono
 
@@ -11889,7 +11895,7 @@ Nicosia
 
 
 
-If you want to get variables from an array, you can put their names inside `[]` to destructure it. This is the same as using a tuple in `match` statements or to get variables from a struct.
+If you want to get variables from an array, you can put their names inside `[]` to destructure it. This is the same as using a tuple in `match` statements or destructuring to get variables from a struct.
 
 ```rust
 fn main() {
